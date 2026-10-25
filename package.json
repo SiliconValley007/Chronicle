@@ -1,0 +1,19 @@
+{
+  "name": "chronicle",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node test.mjs && node scripts/content-pipeline.mjs validate",
+    "build": "node scripts/build.mjs",
+    "check:links": "node scripts/check-links.mjs",
+    "pipeline": "node scripts/content-pipeline.mjs",
+    "test:e2e": "npm run build && playwright test",
+    "seed": "node scripts/build-seed-data.mjs",
+    "test:coverage": "node scripts/coverage.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.64.1",
+    "@sparticuz/chromium": "^153.0.0"
+  }
+}

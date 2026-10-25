@@ -1,0 +1,1312 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <meta name="color-scheme" content="dark light" />
+    <title>Chronicle — endless history</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="favicon.svg" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <meta name="theme-color" content="#14110f" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #14110f;
+        --fg: #f4ede4;
+        --mut: #b9aea1;
+        --ac: #e8b04b;
+        --card: #221d19;
+        --ln: #3a322b;
+        --on: #14110f;
+        font-family: "Google Sans Flex", system-ui, sans-serif;
+      }
+      @media (prefers-color-scheme: light) {
+        :root {
+          --bg: #f7f1e8;
+          --fg: #1d1713;
+          --mut: #5a4e43;
+          --ac: #8a4b08;
+          --card: #fffaf2;
+          --ln: #dccfbd;
+          --on: #fff;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: inherit;
+      }
+      button,
+      input,
+      select {
+        font: inherit;
+        color: inherit;
+      }
+      button {
+        cursor: pointer;
+      }
+      :focus-visible {
+        outline: 3px solid var(--ac);
+        outline-offset: 2px;
+      }
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 20;
+        padding: max(16px, env(safe-area-inset-top, 16px)) 24px 12px;
+        background: linear-gradient(var(--bg) 70%, transparent);
+      }
+      nav {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        flex-wrap: wrap;
+        padding-bottom: 8px;
+      }
+      nav button {
+        border: 1px solid var(--ln);
+        background: var(--card);
+        border-radius: 99px;
+        padding: 8px 14px;
+        min-height: 40px;
+      }
+      nav button[aria-pressed="true"] {
+        background: var(--ac);
+        color: var(--on);
+        border-color: var(--ac);
+      }
+      .chip {
+        color: var(--mut);
+        font-size: 0.8rem;
+        margin-left: auto;
+      }
+      #feed {
+        height: 100dvh;
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+        overscroll-behavior: contain;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+      #feed::-webkit-scrollbar {
+        display: none;
+      }
+      .card {
+        height: 100dvh;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 120px max(20px, calc((100vw - 640px) / 2)) 40px;
+        position: relative;
+      }
+      .card .m {
+        color: var(--ac);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 0.78rem;
+        font-weight: 600;
+      }
+      h2 {
+        font-size: clamp(2rem, 7vw, 3.4rem);
+        line-height: 1.05;
+        margin: 0.3em 0;
+        font-weight: 800;
+      }
+      .card p {
+        font-size: clamp(1.05rem, 2.6vw, 1.3rem);
+        line-height: 1.5;
+        margin: 0.4em 0;
+      }
+      .sig {
+        border-left: 3px solid var(--ac);
+        padding-left: 12px;
+        color: var(--mut);
+      }
+      .note {
+        background: var(--card);
+        border: 1px dashed var(--ln);
+        border-radius: 10px;
+        padding: 10px 12px;
+        font-size: 0.9rem;
+      }
+      .row {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin-top: 14px;
+        flex-wrap: wrap;
+      }
+      .row a {
+        color: var(--ac);
+      }
+      .row button {
+        border: 1px solid var(--ln);
+        background: var(--card);
+        border-radius: 99px;
+        padding: 8px 16px;
+        min-height: 44px;
+      }
+      .row button[aria-pressed="true"] {
+        background: var(--ac);
+        color: var(--on);
+      }
+      dialog {
+        background: var(--card);
+        color: var(--fg);
+        border: 1px solid var(--ln);
+        border-radius: 16px;
+        max-width: min(520px, 92vw);
+        width: 100%;
+      }
+      dialog::backdrop {
+        background: #000a;
+      }
+      #cl {
+        max-height: 50vh;
+        overflow: auto;
+        padding: 0;
+        list-style: none;
+        margin: 8px 0;
+      }
+      #cl button {
+        width: 100%;
+        text-align: left;
+        background: none;
+        border: 0;
+        padding: 10px;
+        border-bottom: 1px solid var(--ln);
+      }
+      input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid var(--ln);
+        background: var(--bg);
+      }
+      #toast {
+        position: fixed;
+        bottom: max(32px, env(safe-area-inset-bottom));
+        left: 50%;
+        transform: translate(-50%, 16px);
+        background: color-mix(in srgb, var(--card) 82%, transparent);
+        color: var(--fg);
+        border: 1px solid var(--ln);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        padding: 12px 20px;
+        border-radius: 999px;
+        z-index: 100;
+        opacity: 0;
+        pointer-events: none;
+        white-space: nowrap;
+        max-width: 90vw;
+        transition:
+          opacity 0.25s,
+          transform 0.25s;
+      }
+      #toast.on {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+      .share-btn.is-active {
+        background: #e5a93c;
+        color: #14120e;
+        border-color: transparent;
+      }
+      .share-btn.is-active:hover {
+        background: #e5a93c;
+      }
+      .card > * {
+        animation: up 0.6s both;
+      }
+      @keyframes up {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+      }
+      .ld {
+        padding: 40vh 24px;
+        text-align: center;
+        color: var(--mut);
+      }
+      h2 {
+        letter-spacing: -0.025em;
+      }
+      .card .m {
+        font-size: 0.72rem;
+      }
+      .card p {
+        max-width: 34em;
+      }
+      nav button {
+        min-height: 44px;
+      }
+      .sr {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+      }
+      #ctl {
+        position: fixed;
+        right: 12px;
+        bottom: calc(16px + env(safe-area-inset-bottom));
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      #ctl button {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: 1px solid var(--ln);
+        background: var(--card);
+      }
+      nav button {
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        background: color-mix(in srgb, var(--card) 72%, transparent);
+      }
+      dialog,
+      #cl {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+      dialog::-webkit-scrollbar,
+      #cl::-webkit-scrollbar {
+        display: none;
+      }
+      dialog[open] {
+        display: flex;
+        flex-direction: column;
+        max-height: min(80vh, 620px);
+        overflow: hidden;
+        padding: 16px;
+      }
+      dialog form {
+        overflow: auto;
+        scrollbar-width: none;
+      }
+      .mh {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+      }
+      .mh h3 {
+        margin: 0;
+      }
+      .x {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 1px solid var(--ln);
+        background: var(--bg);
+        color: var(--fg);
+      }
+      #dc #cl {
+        flex: 1;
+        min-height: 0;
+        max-height: none;
+        overflow: auto;
+      }
+      #cl button {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: center;
+        min-height: 48px;
+      }
+      .rg {
+        color: var(--mut);
+        font-size: 0.85rem;
+      }
+      .card:not(.end) {
+        padding-right: max(84px, calc((100vw - 640px) / 2));
+      }
+      .card:not(.end) .row {
+        position: absolute;
+        right: max(12px, env(safe-area-inset-right));
+        bottom: 150px;
+        flex-direction: column;
+        margin: 0;
+        align-items: center;
+      }
+      .row button,
+      .row .ic {
+        min-width: 48px;
+        height: 48px;
+      }
+      .row .ic {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--ln);
+        background: var(--card);
+        border-radius: 24px;
+        text-decoration: none;
+        font-size: 1.2rem;
+      }
+      .row .cp {
+        color: var(--ac);
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+      #ctl {
+        left: auto;
+        right: max(12px, env(safe-area-inset-right));
+        bottom: 16px;
+        gap: 8px;
+      }
+      #ctl button {
+        width: 44px;
+        height: 44px;
+      }
+      .card:not(.end) .row {
+        bottom: 128px;
+      }
+      .card:not(.end) .row button,
+      .card:not(.end) .row .ic {
+        width: 44px;
+        min-width: 44px;
+        height: 44px;
+        padding: 0;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      nav button:focus:not(:focus-visible) {
+        outline: none;
+      }
+      .card.end[role="status"] {
+        opacity: 0.9;
+      }
+      .pulse {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        font-size: 96px;
+        color: var(--ac);
+        opacity: 0;
+        pointer-events: none;
+        animation: pop 0.7s both;
+      }
+      @keyframes pop {
+        0% {
+          opacity: 0;
+          transform: translate(-50%, -50%) scale(0.4);
+        }
+        30% {
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1.1);
+        }
+        100% {
+          opacity: 0;
+          transform: translate(-50%, -50%) scale(1);
+        }
+      }
+      #ctl[hidden] {
+        display: none;
+      }
+      .source-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        align-self: flex-start;
+        margin-top: 16px;
+        padding: 8px 14px;
+        min-height: 44px;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        text-decoration: none;
+        color: var(--ac);
+        border: 1px solid var(--ln);
+        background: color-mix(in srgb, var(--card) 72%, transparent);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        max-width: 100%;
+      }
+      nav button[aria-pressed="true"] {
+        border-color: transparent;
+      }
+      .share-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--fg);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation: none !important;
+          transition: none !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 class="sr">Chronicle</h1>
+      <nav aria-label="Primary">
+        <button id="bg" aria-pressed="true">Global</button
+        ><button id="bc" aria-haspopup="dialog">Countries</button
+        ><button id="bs" aria-pressed="false">Saved</button>
+      </nav>
+    </header>
+    <main id="feed" tabindex="0" aria-label="History feed">
+      <p class="ld" role="status">Loading history…</p>
+    </main>
+    <dialog id="dc" aria-label="Choose a country">
+      <div class="mh">
+        <h3>Choose a country</h3>
+        <button type="button" class="x" id="dx" aria-label="Close">✕</button>
+      </div>
+      <input
+        id="q"
+        type="search"
+        placeholder="Search countries"
+        aria-label="Search countries"
+      />
+      <ul id="cl"></ul>
+    </dialog>
+    <div id="ctl">
+      <button id="pv" aria-label="Previous article">↑</button
+      ><button id="nx" aria-label="Next article">↓</button>
+    </div>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script type="module">
+      import { ITEMS, COUNTRIES } from "./data.js";
+      import { REG } from "./countries.js";
+      const $ = (s) => document.querySelector(s),
+        mem = {},
+        T = $("#toast");
+      const toast = (m) => {
+        T.textContent = m;
+        T.classList.add("on");
+        setTimeout(() => T.classList.remove("on"), 2000);
+      };
+      const st = {
+        get(k, d) {
+          try {
+            const v = localStorage.getItem("chr:" + k);
+            return v == null ? d : JSON.parse(v);
+          } catch {
+            return mem[k] ?? d;
+          }
+        },
+        set(k, v) {
+          mem[k] = v;
+          try {
+            localStorage.setItem("chr:" + k, JSON.stringify(v));
+          } catch {
+            if (!st.w) {
+              st.w = 1;
+              toast("Storage unavailable or full — progress may not persist.");
+            }
+          }
+        },
+      };
+      const arr = (k) => {
+        const v = st.get(k, []);
+        return Array.isArray(v) ? v.filter((x) => typeof x === "string") : [];
+      };
+      const viewed = new Set(arr("viewed")),
+        saved = new Set(arr("saved")),
+        days = new Set(arr("days")),
+        cx = new Set(arr("cx")),
+        liveItems = [],
+        snaps = (() => {
+          const v = st.get("snaps", {});
+          return v && typeof v === "object" && !Array.isArray(v) ? v : {};
+        })();
+      let busy = 0;
+      const day = () => new Date().toLocaleDateString("en-CA"),
+        today = day();
+      const hash = (s) => {
+        let x = 0;
+        for (const c of s) x = (x * 31 + c.charCodeAt(0)) >>> 0;
+        return x;
+      };
+      const reduce = matchMedia("(prefers-reduced-motion:reduce)").matches;
+      let cat = "",
+        list = [],
+        io,
+        timers = new Map(),
+        idx = 0,
+        cur = null,
+        keep = null,
+        lastTry = 0,
+        pin = null;
+      function h(t, a, ...k) {
+        const e = document.createElement(t);
+        for (const x in a || {}) e[x] = a[x];
+        e.append(...k);
+        return e;
+      }
+      function build() {
+        if (cat === "saved")
+          return [...saved]
+            .map((id) => snaps[id] || ITEMS.find((i) => i.id === id))
+            .filter(
+              (x) => x && x.t && x.b && x.src && /^https:\/\//.test(x.src.u),
+            )
+            .sort((a, b) => a.s - b.s);
+        const l = ITEMS.concat(liveItems).filter(
+          (i) => (!cat || i.c === cat) && (!viewed.has(i.id) || i.id === keep),
+        );
+        return cat
+          ? l.sort((a, b) => a.s - b.s)
+          : l.sort((a, b) => hash(a.id + today) - hash(b.id + today));
+      }
+      const SHARE_SVG =
+        '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>';
+      function copyText(t) {
+        try {
+          navigator.clipboard &&
+            navigator.clipboard.writeText(t).catch(() => {});
+        } catch {}
+        try {
+          const a = document.createElement("textarea");
+          a.value = t;
+          a.setAttribute("readonly", "");
+          a.style.cssText = "position:fixed;left:-9999px;top:0;opacity:0";
+          document.body.append(a);
+          a.select();
+          document.execCommand("copy");
+          a.remove();
+        } catch {}
+      }
+      function flash(b) {
+        clearTimeout(b._t);
+        b.classList.add("is-active");
+        b.textContent = "✓";
+        b._t = setTimeout(() => {
+          b.classList.remove("is-active");
+          b.innerHTML = SHARE_SVG;
+        }, 1500);
+      }
+      function card(i) {
+        const sv = h(
+            "button",
+            { type: "button", className: "save-btn rail-btn" },
+            "",
+          ),
+          paint = () => {
+            sv.setAttribute("aria-pressed", saved.has(i.id));
+            sv.textContent = saved.has(i.id) ? "★" : "☆";
+            sv.setAttribute(
+              "aria-label",
+              saved.has(i.id) ? "Remove bookmark" : "Save article",
+            );
+          };
+        paint();
+        sv.onclick = () => {
+          const was = saved.has(i.id);
+          if (was) {
+            saved.delete(i.id);
+            delete snaps[i.id];
+          } else {
+            saved.add(i.id);
+            snaps[i.id] = i;
+          }
+          st.set("saved", [...saved]);
+          st.set("snaps", snaps);
+          paint();
+          updSaved();
+          if (was && cat === "saved") dropCard(s, i);
+        };
+        const s = h(
+          "section",
+          { className: "card" },
+          h(
+            "div",
+            { className: "m" },
+            `${i.era} · ${i.y} · ${i.c || "World"} · ${i.th}`,
+          ),
+          h("h2", {}, i.t),
+          h("p", {}, i.b),
+          h("p", { className: "sig" }, i.sig),
+          ...(/^https:\/\//.test(i.src.u)
+            ? [
+                h(
+                  "a",
+                  {
+                    className: "source-cta",
+                    href: i.src.u,
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                  },
+                  `Read full article · ${i.src.t || "Wikipedia"} ↗`,
+                ),
+              ]
+            : []),
+        );
+        s.dataset.id = i.id;
+        s.setAttribute("aria-label", i.t);
+        if (i.n)
+          s.append(h("p", { className: "note" }, "Historian’s note: " + i.n));
+        const share = h("button", {
+          type: "button",
+          className: "rail-btn share-btn",
+          title: "Share story",
+        });
+        share.setAttribute("aria-label", "Share story");
+        share.innerHTML = SHARE_SVG;
+        share.onclick = async (e) => {
+          e.stopPropagation();
+          const url = i.src.u;
+          const shareUrl =
+            location.href.split("#")[0] +
+            "#story=" +
+            encodeURIComponent(i.id) +
+            (i.live && slugOf(url)
+              ? "&wiki=" + encodeURIComponent(slugOf(url))
+              : "");
+          copyText(shareUrl);
+          flash(share);
+          toast("Link copied to clipboard");
+          if (e.detail > 0) share.blur();
+          if (
+            navigator.share &&
+            /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
+          ) {
+            try {
+              await navigator.share({ title: i.t, url: shareUrl });
+            } catch {}
+          }
+        };
+        const rc = REG.find((x) => x.name === i.c),
+          cp =
+            rc && cat !== i.c
+              ? h(
+                  "a",
+                  {
+                    href: "#country=" + rc.code,
+                    className: "ic cp",
+                    title: "Explore " + i.c,
+                  },
+                  rc.code,
+                )
+              : null;
+        if (cp) cp.setAttribute("aria-label", rc.code + ": explore " + i.c);
+        s.ondblclick = (e) => {
+          if (e.target.closest("a,button")) return;
+          sv.click();
+          const p = h(
+            "div",
+            { className: "pulse", "aria-hidden": "true" },
+            saved.has(i.id) ? "★" : "☆",
+          );
+          s.append(p);
+          setTimeout(() => p.remove(), 700);
+        };
+        s.append(
+          h("div", { className: "row" }, ...[sv, share, cp].filter(Boolean)),
+        );
+        return s;
+      }
+      function endCard() {
+        if (busy && cat !== "saved")
+          return h(
+            "section",
+            { className: "card end", role: "status" },
+            h("h2", {}, "Loading more stories…"),
+            h("p", {}, "Fetching more history for you."),
+          );
+        const sv = cat === "saved",
+          n = list.length,
+          inC = (i) => !cat || i.c === cat,
+          tot = ITEMS.filter(inC).length,
+          seen = ITEMS.filter((i) => inC(i) && viewed.has(i.id)).length;
+        const pool = COUNTRIES.filter(
+          (c) => c !== cat && ITEMS.some((x) => x.c === c && !viewed.has(x.id)),
+        )
+          .sort(() => Math.random() - 0.5)
+          .slice(0, 2);
+        const s = h(
+          "section",
+          { className: "card end" },
+          h(
+            "h2",
+            {},
+            sv
+              ? n
+                ? "End of your saved articles"
+                : "No saved articles yet"
+              : n
+                ? "That’s all for now"
+                : tot
+                  ? "You’ve read everything here"
+                  : "No articles for this country yet",
+          ),
+          h(
+            "p",
+            {},
+            sv
+              ? n
+                ? `${n} saved. Scroll up to revisit, or unsave with ★.`
+                : "Tap ☆ on the right rail or double-tap any story to save it here."
+              : `No more stories are available right now${navigator.onLine ? "" : " (you appear to be offline)"}. Try another country, or check back soon.`,
+          ),
+        );
+        const r = h("div", { className: "row" }),
+          b = (t, f) =>
+            r.append(h("button", { type: "button", onclick: f }, t));
+        if (n)
+          b("↑ Back to top", () => {
+            $("#feed").scrollTo({
+              top: 0,
+              behavior: reduce ? "auto" : "smooth",
+            });
+          });
+        if (cat) b("Global feed", () => go(""));
+        if (!sv && saved.size) b(`Saved (${saved.size})`, () => go("saved"));
+        if (!sv) b("Load more stories", () => prefetch());
+        if (!sv && seen)
+          b("Reset reading history", () => {
+            if (confirm("Clear viewed history? Saved articles are kept.")) {
+              viewed.clear();
+              days.clear();
+              st.set("viewed", []);
+              st.set("days", []);
+              st.set("pos", null);
+              route();
+            }
+          });
+        pool.forEach((c) => b("Explore " + c, () => go(c)));
+        b("Countries", () => $("#dc").showModal());
+        s.append(r);
+        return s;
+      }
+      function render() {
+        io && io.disconnect();
+        timers.forEach(clearTimeout);
+        timers.clear();
+        list = build();
+        if (pin) list = [pin, ...list.filter((x) => x.id !== pin.id)];
+        const f = $("#feed");
+        f.replaceChildren(...list.map(card), endCard());
+        f.scrollTop = 0;
+        idx = 0;
+        io = new IntersectionObserver(
+          (es) =>
+            es.forEach((e) => {
+              const id = e.target.dataset.id;
+              if (e.isIntersecting) {
+                const n = [...f.children].indexOf(e.target);
+                idx = n;
+                if (id) {
+                  cur = id;
+                  st.set("pos", { s: cat || "global", id });
+                }
+                if (cat !== "saved" && f.children.length - 1 - n <= 5)
+                  prefetch(true);
+                if (id && cat !== "saved" && !viewed.has(id) && !timers.has(id))
+                  timers.set(
+                    id,
+                    setTimeout(() => {
+                      timers.delete(id);
+                      if (document.visibilityState === "visible") mark(id);
+                    }, 2000),
+                  );
+              } else if (timers.has(id)) {
+                clearTimeout(timers.get(id));
+                timers.delete(id);
+              }
+            }),
+          { root: f, threshold: 0.6 },
+        );
+        const ps = st.get("pos", null);
+        if (!pin && ps && ps.s === (cat || "global")) {
+          const el = [...f.children].find((c) => c.dataset.id === ps.id);
+          el && el.scrollIntoView();
+        }
+        [...f.children].forEach((c) => io.observe(c));
+        ctl();
+        if (cat !== "saved") prefetch();
+        $("#bg").setAttribute("aria-pressed", !cat);
+        $("#bc").setAttribute("aria-pressed", !!cat && cat !== "saved");
+        $("#bs").setAttribute("aria-pressed", cat === "saved");
+        updSaved();
+        $("#bc").textContent = cat && cat !== "saved" ? cat : "Countries";
+        document.title =
+          (cat && cat !== "saved" ? cat : cat ? "Saved" : "Global") +
+          " — Chronicle";
+      }
+      function mark(id) {
+        viewed.add(id);
+        const it = list.find((x) => x.id === id);
+        if (it && it.c) {
+          cx.add(it.c);
+          st.set("cx", [...cx]);
+        }
+        if (remaining() <= 3) setTimeout(prefetch, 0);
+        days.add(today);
+        st.set("viewed", [...viewed]);
+        st.set("days", [...days]);
+        if ([10, 25, 50, 100].includes(viewed.size))
+          toast(`${viewed.size} stories explored!`);
+      }
+      function streak() {
+        let n = 0,
+          d = new Date();
+        if (!days.has(day())) d.setDate(d.getDate() - 1);
+        while (days.has(d.toLocaleDateString("en-CA"))) {
+          n++;
+          d.setDate(d.getDate() - 1);
+        }
+        return n;
+      }
+      const remaining = () => list.filter((i) => !viewed.has(i.id)).length;
+      const OFF = ((v) =>
+          v && typeof v === "object" && !Array.isArray(v) ? v : {})(
+          st.get("off", {}),
+        ),
+        TOPICS = [
+          "ancient history",
+          "medieval history",
+          "early modern history",
+          "modern history",
+          "history of Africa",
+          "history of Asia",
+          "history of Europe",
+          "history of the Americas",
+          "history of Oceania",
+          "ancient civilizations",
+          "world wars",
+          "trade routes history",
+        ];
+      const yr = (t) => {
+        const m = t.match(/\b(\d{1,4})\s*(BCE|BC)\b/i);
+        if (m) return -m[1];
+        const n = t.match(/\b(1\d{3}|20[0-2]\d|[5-9]\d\d)\b/);
+        return n ? +n[1] : null;
+      };
+      function updSaved() {
+        $("#bs").textContent = saved.size ? `Saved (${saved.size})` : "Saved";
+      }
+      function ctl() {
+        $("#ctl").hidden = $("#feed").children.length <= 1;
+      }
+      function refreshEnd() {
+        const f = $("#feed"),
+          end = f.lastElementChild;
+        if (end && end.classList.contains("end")) {
+          io.unobserve(end);
+          const ne = endCard();
+          f.replaceChild(ne, end);
+          io.observe(ne);
+        }
+        ctl();
+      }
+      function dropCard(s, i) {
+        const f = $("#feed"),
+          k = [...f.children].indexOf(s);
+        io.unobserve(s);
+        list = list.filter((x) => x.id !== i.id);
+        s.remove();
+        const cs = [...f.children],
+          ok = (c) => c && !c.classList.contains("end"),
+          t = ok(cs[k]) ? cs[k] : ok(cs[k - 1]) ? cs[k - 1] : null;
+        refreshEnd();
+        if (t) t.scrollIntoView({ behavior: reduce ? "auto" : "smooth" });
+        else f.scrollTop = 0;
+      }
+      function append(items) {
+        const f = $("#feed"),
+          end = f.lastElementChild,
+          wasEnd = idx >= f.children.length - 1;
+        let first;
+        items.forEach((i) => {
+          list.push(i);
+          const c = card(i);
+          first = first || c;
+          f.insertBefore(c, end);
+          io.observe(c);
+        });
+        io.unobserve(end);
+        const ne = endCard();
+        f.replaceChild(ne, end);
+        io.observe(ne);
+        ctl();
+        if (wasEnd)
+          first.scrollIntoView({ behavior: reduce ? "auto" : "smooth" });
+      }
+      const QT = (c) => [
+        "History of " + c,
+        c + " ancient history",
+        c + " medieval history",
+        c + " empire kingdom dynasty",
+        c + " independence revolution",
+        c + " treaty war battle",
+        c + " 19th century",
+        c + " 20th century",
+        "Timeline of " + c,
+        "Culture and society of " + c,
+        "Archaeology of " + c,
+        "Constitutional history of " + c,
+      ];
+      async function prefetch(force) {
+        // single-request bulk Wikipedia extracts; failures are silent
+        if (
+          busy ||
+          cat === "saved" ||
+          !navigator.onLine ||
+          Date.now() - lastTry < 1500
+        )
+          return;
+        if (
+          !force &&
+          liveItems.filter((i) => (!cat || i.c === cat) && !viewed.has(i.id))
+            .length >= 20
+        )
+          return;
+        lastTry = Date.now();
+        busy = 1;
+        const sc = cat,
+          key = sc || "global",
+          QS = sc ? QT(sc) : TOPICS,
+          out = [];
+        refreshEnd();
+        try {
+          for (let t = 0; t < 3 && !out.length; t++) {
+            const qi = +OFF[key + ":q"] || 0,
+              k = key + ":" + (qi % QS.length),
+              so = +OFF[k] || 0;
+            OFF[k] = so + 20;
+            OFF[key + ":q"] = qi + 1;
+            st.set("off", OFF);
+            const j = await (
+              await fetch(
+                `https://en.wikipedia.org/w/api.php?action=query&generator=search&gsrsearch=${encodeURIComponent(QS[qi % QS.length])}&gsrlimit=20&gsroffset=${so}&prop=extracts|info&exintro=1&explaintext=1&exsentences=5&inprop=url&format=json&origin=*`,
+              )
+            ).json();
+            for (const p of Object.values(j.query?.pages || {}).sort(
+              (a, b) => (a.index || 0) - (b.index || 0),
+            )) {
+              const ex = (p.extract || "")
+                .replace(/\s+/g, " ")
+                .replace(/(\.\.\.|…)\s*$/, "")
+                .trim();
+              if (
+                ex.length < 90 ||
+                /may refer to|disambiguation/i.test(ex) ||
+                /^(List|Timeline|Outline|Index) of/i.test(p.title)
+              )
+                continue;
+              const id = "live-" + p.pageid,
+                u = p.fullurl;
+              if (
+                !u ||
+                !/^https:\/\//.test(u) ||
+                viewed.has(id) ||
+                liveItems.some((x) => x.id === id || x.src.u === u) ||
+                out.some((x) => x.id === id) ||
+                ITEMS.some((x) => x.src.u === u)
+              )
+                continue;
+              const ss = (ex.match(/[^.!?]+[.!?]+(?=\s|$)/g) || [])
+                .map((x) => x.trim())
+                .filter((x) => x.length >= 15 && /[^.]\.$/.test(x));
+              if (!ss.length) continue;
+              const take = Math.max(1, Math.min(3, ss.length - 1)),
+                y = yr(ex);
+              out.push({
+                id,
+                c: sc,
+                y: y == null ? "Historical" : y < 0 ? -y + " BCE" : String(y),
+                s: y == null ? 1500 : y,
+                era:
+                  y == null
+                    ? "Overview"
+                    : y < 600
+                      ? "Ancient"
+                      : y < 1400
+                        ? "Medieval"
+                        : y < 1800
+                          ? "Early Modern"
+                          : "Modern",
+                th: "Live",
+                t: p.title,
+                b: ss.slice(0, take).join(" ").trim(),
+                sig: (ss.length > 1
+                  ? ss[take]
+                  : "Read the full story at the source."
+                ).trim(),
+                n: "",
+                src: { t: p.title + " — Wikipedia", u },
+                license: "CC BY-SA 4.0",
+                live: true,
+              });
+            }
+            if (!out.length) await new Promise((x) => setTimeout(x, 300));
+          }
+        } catch {}
+        busy = 0;
+        liveItems.push(...out);
+        cacheLive(out);
+        if (sc === cat && out.length) append(out);
+        else refreshEnd();
+      }
+      const LC = ((v) =>
+        v && typeof v === "object" && !Array.isArray(v) ? v : {})(
+        st.get("lc", {}),
+      );
+      function cacheLive(a) {
+        for (const i of a) LC[i.id] = i;
+        const ks = Object.keys(LC);
+        if (ks.length > 60)
+          for (const k of ks.slice(0, ks.length - 60)) delete LC[k];
+        st.set("lc", LC);
+      }
+      const okItem = (x) =>
+        x && x.id && x.t && x.b && x.src && /^https:\/\//.test(x.src.u);
+      function localResolve(id) {
+        const c = [
+          ITEMS.find((x) => x.id === id),
+          snaps[id],
+          liveItems.find((x) => x.id === id),
+          LC[id],
+        ].find(okItem);
+        return c || null;
+      }
+      function mkLive(p) {
+        const ex = (p.extract || "")
+          .replace(/\s+/g, " ")
+          .replace(/(\.\.\.|…)\s*$/, "")
+          .trim();
+        if (ex.length < 30 || !p.fullurl) return null;
+        const ss = (ex.match(/[^.!?]+[.!?]+(?=\s|$)/g) || [])
+          .map((x) => x.trim())
+          .filter((x) => x.length >= 15 && /[^.]\.$/.test(x));
+        if (!ss.length) return null;
+        const take = Math.max(1, Math.min(3, ss.length - 1)),
+          y = yr(ex);
+        return {
+          id: "live-" + p.pageid,
+          c: "",
+          y: y == null ? "Historical" : y < 0 ? -y + " BCE" : String(y),
+          s: y == null ? 1500 : y,
+          era:
+            y == null
+              ? "Overview"
+              : y < 600
+                ? "Ancient"
+                : y < 1400
+                  ? "Medieval"
+                  : y < 1800
+                    ? "Early Modern"
+                    : "Modern",
+          th: "Live",
+          t: p.title,
+          b: ss.slice(0, take).join(" ").trim(),
+          sig: (ss.length > 1
+            ? ss[take]
+            : "Read the full story at the source."
+          ).trim(),
+          n: "",
+          src: { t: p.title + " — Wikipedia", u: p.fullurl },
+          license: "CC BY-SA 4.0",
+          live: true,
+        };
+      }
+      async function fetchWiki(slug) {
+        try {
+          const j = await (
+            await fetch(
+              `https://en.wikipedia.org/w/api.php?action=query&titles=${encodeURIComponent(slug)}&prop=extracts|info&exsentences=5&explaintext=1&inprop=url&format=json&origin=*`,
+            )
+          ).json();
+          const p = Object.values(j.query?.pages || {})[0];
+          if (!p || p.missing !== undefined) return null;
+          const it = mkLive(p);
+          if (it) cacheLive([it]);
+          return it;
+        } catch {
+          return null;
+        }
+      }
+      const slugOf = (u) => {
+        try {
+          return decodeURIComponent(
+            new URL(u).pathname.replace(/^\/wiki\//, ""),
+          );
+        } catch {
+          return "";
+        }
+      };
+      const route = () => {
+        const p = new URLSearchParams(location.hash.slice(1)),
+          k = (p.get("country") || "").toUpperCase(),
+          r = REG.find((x) => x.code === k);
+        const nc = p.get("feed") === "saved" ? "saved" : r ? r.name : "";
+        keep = nc === cat ? cur : null;
+        cat = nc;
+        st.set("cat", cat);
+        const sid = p.get("story"),
+          wk = p.get("wiki");
+        pin = null;
+        if (sid && !nc) {
+          pin = localResolve(sid) || null;
+          if (!pin && wk)
+            fetchWiki(wk).then((it) => {
+              if (
+                it &&
+                new URLSearchParams(location.hash.slice(1)).get("story") === sid
+              ) {
+                pin = it;
+                render();
+              }
+            });
+        }
+        render();
+      };
+      function go(c) {
+        const r = REG.find((x) => x.name === c),
+          h = c === "saved" ? "#feed=saved" : r ? "#country=" + r.code : "";
+        if (location.hash === h || (!h && !location.hash)) route();
+        else location.hash = h;
+        $("#dc").open && $("#dc").close();
+      }
+      addEventListener("hashchange", route);
+      $("#bg").onclick = () => go("");
+      $("#bs").onclick = () => go("saved");
+      $("#bc").onclick = () => {
+        $("#dc").showModal();
+        $("#q").focus();
+      };
+      function fill() {
+        const q = $("#q").value.toLowerCase();
+        $("#cl").replaceChildren(
+          ...REG.filter((r) =>
+            (r.name + " " + r.region + " " + r.code).toLowerCase().includes(q),
+          ).map((r) => {
+            return h(
+              "li",
+              {},
+              h(
+                "button",
+                { type: "button", onclick: () => go(r.name) },
+                h("b", {}, r.name),
+                h(
+                  "span",
+                  { className: "rg" },
+                  r.region + (cat === r.name ? " ●" : ""),
+                ),
+              ),
+            );
+          }),
+        );
+      }
+      $("#cl").onkeydown = (e) => {
+        const b = [...$("#cl").querySelectorAll("button")],
+          i = b.indexOf(document.activeElement);
+        if (e.key === "ArrowDown") {
+          e.preventDefault();
+          b[Math.min(i + 1, b.length - 1)]?.focus();
+        }
+        if (e.key === "ArrowUp") {
+          e.preventDefault();
+          (i > 0 ? b[i - 1] : $("#q")).focus();
+        }
+      };
+      $("#q").onkeydown = (e) => {
+        if (e.key === "ArrowDown") {
+          e.preventDefault();
+          $("#cl button")?.focus();
+        }
+      };
+      $("#dx").onclick = () => $("#dc").close();
+      $("#q").oninput = fill;
+      fill();
+      let kb = false;
+      addEventListener(
+        "keydown",
+        () => {
+          kb = true;
+        },
+        true,
+      );
+      addEventListener(
+        "pointerdown",
+        () => {
+          kb = false;
+        },
+        true,
+      );
+      $("#dc").addEventListener("close", () => {
+        fill();
+        if (!kb)
+          setTimeout(
+            () => document.activeElement && document.activeElement.blur(),
+            0,
+          );
+      });
+      addEventListener("keydown", (e) => {
+        const f = $("#feed"),
+          k = e.key;
+        if (
+          e.target.closest("input,dialog") ||
+          (k === " " && e.target.closest("button,a"))
+        )
+          return;
+        const d = ["ArrowDown", "PageDown", "j", " "].includes(k)
+          ? 1
+          : ["ArrowUp", "PageUp", "k"].includes(k)
+            ? -1
+            : 0;
+        if (d) {
+          e.preventDefault();
+          f.scrollBy({
+            top: d * f.clientHeight,
+            behavior: reduce ? "auto" : "smooth",
+          });
+        }
+      });
+      const step = (d) => {
+        const f = $("#feed");
+        f.scrollBy({
+          top: d * f.clientHeight,
+          behavior: reduce ? "auto" : "smooth",
+        });
+      };
+      $("#pv").onclick = () => step(-1);
+      $("#nx").onclick = () => step(1);
+      route();
+      if ("serviceWorker" in navigator)
+        navigator.serviceWorker.register("./sw.js").catch(() => {});
+      if (!st.get("seen", 0)) {
+        st.set("seen", 1);
+      }
+    </script>
+    <script>
+      setTimeout(() => {
+        const l = document.querySelector(".ld");
+        if (l)
+          l.textContent =
+            "Couldn’t load the content. Check your connection and reload.";
+      }, 6000);
+    </script>
+  </body>
+</html>

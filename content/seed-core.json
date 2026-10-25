@@ -1,0 +1,662 @@
+[
+  {
+    "c": "Türkiye",
+    "y": "c. 9500 BCE",
+    "s": -9500,
+    "era": "Ancient",
+    "th": "Culture",
+    "t": "Göbekli Tepe",
+    "b": "Monumental T-shaped stone pillars at this site in southeastern Türkiye were raised by people who, as far as excavation shows, had not yet adopted farming.",
+    "sig": "It challenges the idea that monumental building required settled agriculture first.",
+    "n": "Dating rests on radiocarbon and stratigraphy; the site’s purpose is debated.",
+    "src": {
+      "t": "Göbekli Tepe",
+      "u": "https://en.wikipedia.org/wiki/G%C3%B6bekli_Tepe"
+    }
+  },
+  {
+    "c": "Iraq",
+    "y": "c. 2100 BCE",
+    "s": -2100,
+    "era": "Ancient",
+    "th": "Rights",
+    "t": "Code of Ur-Nammu",
+    "b": "Written in Sumerian in the city of Ur, it is the oldest known surviving law code, setting fixed penalties, often payments of silver. Only fragments of the tablets survive today.",
+    "sig": "It shows written law serving rulers centuries before Hammurabi.",
+    "n": "Attribution to Ur-Nammu (or his son Shulgi) and exact date are debated.",
+    "src": {
+      "t": "Code of Ur-Nammu",
+      "u": "https://en.wikipedia.org/wiki/Code_of_Ur-Nammu"
+    }
+  },
+  {
+    "c": "Egypt",
+    "y": "196 BCE",
+    "s": -196,
+    "era": "Ancient",
+    "th": "Ideas",
+    "t": "The Rosetta Stone",
+    "b": "It carries a decree of Ptolemy V in hieroglyphic, Demotic and Greek. French soldiers found it in 1799. It is now displayed in the British Museum in London.",
+    "sig": "The Greek text let Jean-François Champollion announce the decipherment of hieroglyphs in 1822.",
+    "n": "",
+    "src": {
+      "t": "Rosetta Stone",
+      "u": "https://en.wikipedia.org/wiki/Rosetta_Stone"
+    }
+  },
+  {
+    "c": "China",
+    "y": "221 BCE",
+    "s": -221,
+    "era": "Ancient",
+    "th": "Power",
+    "t": "Qin unifies China",
+    "b": "After conquering rival states, Qin’s king took the title Shi Huangdi, “first emperor”. Its capital was Xianyang, near modern Xi’an, and the dynasty lasted only until 206 BCE.",
+    "sig": "Standardised writing, weights and measures across a vast territory shaped later imperial China.",
+    "n": "",
+    "src": {
+      "t": "Qin Shi Huang",
+      "u": "https://en.wikipedia.org/wiki/Qin_Shi_Huang"
+    }
+  },
+  {
+    "c": "India",
+    "y": "c. 261 BCE",
+    "s": -261,
+    "era": "Ancient",
+    "th": "Rights",
+    "t": "Ashoka and Kalinga",
+    "b": "Ashoka’s own inscriptions describe his conquest of Kalinga, the suffering it caused, and his remorse. He then sent missionaries and supported Buddhism across his empire and beyond.",
+    "sig": "His edicts promote dhamma, an ethical code, and are among the earliest deciphered writing in India.",
+    "n": "Date approximate; casualty figures in the edicts are not independently verified.",
+    "src": { "t": "Ashoka", "u": "https://en.wikipedia.org/wiki/Ashoka" }
+  },
+  {
+    "c": "Zimbabwe",
+    "y": "c. 1100–1450",
+    "s": 1100,
+    "era": "Medieval",
+    "th": "Culture",
+    "t": "Great Zimbabwe",
+    "b": "Massive dry-stone walls rose in a trading capital that grew from the 11th century. Its name comes from a Shona phrase for stone houses, and it lies near Masvingo.",
+    "sig": "Evidence shows local African construction, refuting colonial-era claims otherwise.",
+    "n": "Dates and political structure are approximate.",
+    "src": {
+      "t": "Great Zimbabwe",
+      "u": "https://en.wikipedia.org/wiki/Great_Zimbabwe"
+    }
+  },
+  {
+    "c": "Cambodia",
+    "y": "Early 12th century",
+    "s": 1120,
+    "era": "Medieval",
+    "th": "Culture",
+    "t": "Angkor Wat",
+    "b": "Built for King Suryavarman II as a Hindu temple to Vishnu, it later became a Buddhist site. It sits near Siem Reap and appears on the national flag of Cambodia.",
+    "sig": "Often described as the largest religious monument in the world.",
+    "n": "Exact start date unknown.",
+    "src": {
+      "t": "Angkor Wat",
+      "u": "https://en.wikipedia.org/wiki/Angkor_Wat"
+    }
+  },
+  {
+    "c": "United Kingdom",
+    "y": "15 June 1215",
+    "s": 1215,
+    "era": "Medieval",
+    "th": "Rights",
+    "t": "Magna Carta",
+    "b": "King John sealed a charter at Runnymede under pressure from rebel barons, promising limits on arbitrary royal power. Copies were reissued in later reigns, and a few 1215 originals survive.",
+    "sig": "Its idea that rulers are bound by law was cited in later constitutional struggles.",
+    "n": "Most original clauses were quickly revised or annulled; its later reputation is partly legend.",
+    "src": {
+      "t": "Magna Carta",
+      "u": "https://en.wikipedia.org/wiki/Magna_Carta"
+    }
+  },
+  {
+    "c": "Mali",
+    "y": "1324",
+    "s": 1324,
+    "era": "Medieval",
+    "th": "Exploration",
+    "t": "Mansa Musa’s pilgrimage",
+    "b": "The ruler of the Mali Empire made the hajj to Mecca, travelling through Cairo with a large entourage and much gold. He ruled Mali in the early 14th century and is among the best-known African rulers.",
+    "sig": "It drew attention to West African wealth; Mali appears on 14th-century European maps.",
+    "n": "Accounts of the amounts of gold vary.",
+    "src": {
+      "t": "Mansa Musa",
+      "u": "https://en.wikipedia.org/wiki/Mansa_Musa"
+    }
+  },
+  {
+    "c": "",
+    "y": "1347–1351",
+    "s": 1347,
+    "era": "Medieval",
+    "th": "Science",
+    "t": "The Black Death",
+    "b": "Plague spread across Asia, the Middle East, North Africa and Europe. It is thought to have reached Europe by ship from the Black Sea region in 1347.",
+    "sig": "It caused huge mortality and lasting social and economic change.",
+    "n": "Death-toll estimates vary widely by region and source.",
+    "src": {
+      "t": "Black Death",
+      "u": "https://en.wikipedia.org/wiki/Black_Death"
+    }
+  },
+  {
+    "c": "Germany",
+    "y": "c. 1450",
+    "s": 1450,
+    "era": "Early Modern",
+    "th": "Ideas",
+    "t": "Gutenberg’s printing press",
+    "b": "Johannes Gutenberg developed movable-type printing in Mainz; his Bible was printed in the 1450s. His best-known work is the 42-line Bible, printed in Mainz in the 1450s.",
+    "sig": "Cheaper books helped ideas spread faster.",
+    "n": "Early dating is uncertain; movable type existed earlier in East Asia.",
+    "src": {
+      "t": "Johannes Gutenberg",
+      "u": "https://en.wikipedia.org/wiki/Johannes_Gutenberg"
+    }
+  },
+  {
+    "c": "Peru",
+    "y": "c. 1450",
+    "s": 1450,
+    "era": "Early Modern",
+    "th": "Culture",
+    "t": "Machu Picchu",
+    "b": "This Andean site is widely understood as an estate of the Inca ruler Pachacuti. It stands high in the Andes above the Urubamba River in Peru.",
+    "sig": "It shows Inca engineering in steep terrain.",
+    "n": "Dates are approximate and its exact purpose is debated.",
+    "src": {
+      "t": "Machu Picchu",
+      "u": "https://en.wikipedia.org/wiki/Machu_Picchu"
+    }
+  },
+  {
+    "c": "",
+    "y": "1494",
+    "s": 1494,
+    "era": "Early Modern",
+    "th": "Power",
+    "t": "Treaty of Tordesillas",
+    "b": "Spain and Portugal agreed to divide newly claimed lands outside Europe along a meridian, with papal backing. The treaty was signed at Tordesillas in Spain, and the line ran west of the Cape Verde islands.",
+    "sig": "It shows how European powers carved up lands without the consent of people living there.",
+    "n": "",
+    "src": {
+      "t": "Treaty of Tordesillas",
+      "u": "https://en.wikipedia.org/wiki/Treaty_of_Tordesillas"
+    }
+  },
+  {
+    "c": "",
+    "y": "1648",
+    "s": 1648,
+    "era": "Early Modern",
+    "th": "Power",
+    "t": "Peace of Westphalia",
+    "b": "Treaties ended the Thirty Years’ War in the Holy Roman Empire and the Eighty Years’ War between Spain and the Dutch. The settlements were negotiated in the cities of Münster and Osnabrück.",
+    "sig": "Often cited as the origin of modern state sovereignty.",
+    "n": "Historians debate whether that framing is too neat.",
+    "src": {
+      "t": "Peace of Westphalia",
+      "u": "https://en.wikipedia.org/wiki/Peace_of_Westphalia"
+    }
+  },
+  {
+    "c": "United Kingdom",
+    "y": "1807",
+    "s": 1807,
+    "era": "Modern",
+    "th": "Rights",
+    "t": "Slave Trade Act 1807",
+    "b": "Parliament banned the slave trade within the British Empire. It followed decades of campaigning led by figures such as William Wilberforce. The Royal Navy later patrolled the Atlantic to suppress the trade.",
+    "sig": "Slavery itself was only abolished later, by the Slavery Abolition Act 1833.",
+    "n": "",
+    "src": {
+      "t": "Slave Trade Act 1807",
+      "u": "https://en.wikipedia.org/wiki/Slave_Trade_Act_1807"
+    }
+  },
+  {
+    "c": "Haiti",
+    "y": "1 January 1804",
+    "s": 1804,
+    "era": "Modern",
+    "th": "Rights",
+    "t": "Haiti declares independence",
+    "b": "After a revolution begun in 1791 by enslaved people in Saint-Domingue, Jean-Jacques Dessalines proclaimed independence. The new state took the name Haiti, replacing the colonial name Saint-Domingue.",
+    "sig": "It was the first state founded by formerly enslaved people.",
+    "n": "",
+    "src": {
+      "t": "Haitian Revolution",
+      "u": "https://en.wikipedia.org/wiki/Haitian_Revolution"
+    }
+  },
+  {
+    "c": "Mexico",
+    "y": "16 September 1810",
+    "s": 1810,
+    "era": "Modern",
+    "th": "Power",
+    "t": "Grito de Dolores",
+    "b": "Priest Miguel Hidalgo called for revolt against Spanish rule in Dolores. The cry is commemorated in Mexico every 16 September as Independence Day.",
+    "sig": "It began the independence war; independence was achieved in 1821.",
+    "n": "",
+    "src": {
+      "t": "Grito de Dolores",
+      "u": "https://en.wikipedia.org/wiki/Grito_de_Dolores"
+    }
+  },
+  {
+    "c": "Brazil",
+    "y": "7 September 1822",
+    "s": 1822,
+    "era": "Modern",
+    "th": "Power",
+    "t": "Independence of Brazil",
+    "b": "Prince Pedro declared independence from Portugal and became emperor. Pedro was crowned Emperor Pedro I later in 1822, and Portugal recognised Brazil in 1825.",
+    "sig": "Unlike most of Spanish America, Brazil became a monarchy.",
+    "n": "",
+    "src": {
+      "t": "Independence of Brazil",
+      "u": "https://en.wikipedia.org/wiki/Independence_of_Brazil"
+    }
+  },
+  {
+    "c": "New Zealand",
+    "y": "6 February 1840",
+    "s": 1840,
+    "era": "Modern",
+    "th": "Rights",
+    "t": "Treaty of Waitangi",
+    "b": "It was signed by Crown representatives and many Māori chiefs. It is named after the place in the Bay of Islands where it was first signed. Waitangi Day is marked each year on 6 February.",
+    "sig": "Differences between the English and Māori texts still shape debate and the Waitangi Tribunal.",
+    "n": "",
+    "src": {
+      "t": "Treaty of Waitangi",
+      "u": "https://en.wikipedia.org/wiki/Treaty_of_Waitangi"
+    }
+  },
+  {
+    "c": "Japan",
+    "y": "1868",
+    "s": 1868,
+    "era": "Modern",
+    "th": "Power",
+    "t": "Meiji Restoration",
+    "b": "The Tokugawa shogunate ended and power returned to Emperor Meiji, followed by rapid reform. The capital moved from Kyoto to Tokyo, and the feudal domains were abolished in 1871.",
+    "sig": "It launched Japan’s industrialisation and centralised state.",
+    "n": "",
+    "src": {
+      "t": "Meiji Restoration",
+      "u": "https://en.wikipedia.org/wiki/Meiji_Restoration"
+    }
+  },
+  {
+    "c": "India",
+    "y": "15 August 1947",
+    "s": 1947,
+    "era": "Modern",
+    "th": "Power",
+    "t": "Independence and Partition",
+    "b": "India and Pakistan became independent dominions; partition displaced millions. The boundary lines were drawn by a commission headed by Cyril Radcliffe.",
+    "sig": "It reshaped South Asia’s politics and populations.",
+    "n": "Estimates of deaths and displacement vary widely.",
+    "src": {
+      "t": "Partition of India",
+      "u": "https://en.wikipedia.org/wiki/Partition_of_India"
+    }
+  },
+  {
+    "c": "",
+    "y": "10 December 1948",
+    "s": 1948,
+    "era": "Modern",
+    "th": "Rights",
+    "t": "Universal Declaration of Human Rights",
+    "b": "The UN General Assembly adopted it in Paris with 48 votes in favour, none against, and eight abstentions. Eleanor Roosevelt chaired the UN commission that drafted it.",
+    "sig": "It set out rights as a common standard, though it is not itself a binding treaty.",
+    "n": "",
+    "src": {
+      "t": "Universal Declaration of Human Rights",
+      "u": "https://en.wikipedia.org/wiki/Universal_Declaration_of_Human_Rights"
+    }
+  },
+  {
+    "c": "United States",
+    "y": "20 July 1969",
+    "s": 1969,
+    "era": "Modern",
+    "th": "Exploration",
+    "t": "Apollo 11 lands on the Moon",
+    "b": "Neil Armstrong and Buzz Aldrin landed in the Sea of Tranquility while Michael Collins orbited. They spent about two and a half hours walking on the surface before returning to orbit.",
+    "sig": "It was the first crewed Moon landing.",
+    "n": "Date is in UTC.",
+    "src": { "t": "Apollo 11", "u": "https://en.wikipedia.org/wiki/Apollo_11" }
+  },
+  {
+    "c": "",
+    "y": "1980",
+    "s": 1980,
+    "era": "Modern",
+    "th": "Science",
+    "t": "Smallpox declared eradicated",
+    "b": "The WHO declared smallpox eradicated after a worldwide vaccination campaign; the last natural case was in 1977. The campaign relied on surveillance and ring vaccination of contacts.",
+    "sig": "It remains the only human disease eradicated so far.",
+    "n": "",
+    "src": {
+      "t": "Eradication of smallpox",
+      "u": "https://en.wikipedia.org/wiki/Smallpox"
+    }
+  },
+  {
+    "c": "Germany",
+    "y": "9 November 1989",
+    "s": 1989,
+    "era": "Modern",
+    "th": "Power",
+    "t": "The Berlin Wall opens",
+    "b": "East German authorities announced travel easing and crowds crossed the border. The wall had divided the city since August 1961. Crowds crossed that night and soon began dismantling the wall.",
+    "sig": "Germany reunified on 3 October 1990.",
+    "n": "The announcement was confused, which hastened events.",
+    "src": {
+      "t": "Berlin Wall",
+      "u": "https://en.wikipedia.org/wiki/Berlin_Wall"
+    }
+  },
+  {
+    "c": "South Africa",
+    "y": "27 April 1994",
+    "s": 1994,
+    "era": "Modern",
+    "th": "Rights",
+    "t": "First universal elections",
+    "b": "Citizens of all races voted; the ANC won and Nelson Mandela became president. Millions voted for the first time, many queuing for hours. Voting took place over several days in late April 1994.",
+    "sig": "It ended formal apartheid rule.",
+    "n": "",
+    "src": {
+      "t": "1994 South African general election",
+      "u": "https://en.wikipedia.org/wiki/1994_South_African_general_election"
+    }
+  },
+  {
+    "c": "India",
+    "y": "c. 3000–1500 BCE",
+    "s": -3000,
+    "era": "Ancient",
+    "th": "Culture",
+    "t": "Dholavira, a Harappan city",
+    "b": "Dholavira in Gujarat had an elaborate system of reservoirs and channels for conserving water. It was inscribed as a UNESCO World Heritage Site in 2021.",
+    "sig": "It shows how Bronze Age cities in South Asia managed scarce water.",
+    "n": "Occupation dates are approximate; the Indus script remains undeciphered.",
+    "src": { "t": "Dholavira", "u": "https://en.wikipedia.org/wiki/Dholavira" }
+  },
+  {
+    "c": "India",
+    "y": "c. 5th century BCE",
+    "s": -500,
+    "era": "Ancient",
+    "th": "Ideas",
+    "t": "The Buddha teaches in the Ganges plain",
+    "b": "Siddhartha Gautama taught in the Gangetic region, including at Sarnath, founding the tradition later called Buddhism. His teachings centre on suffering, its causes and a path to its end.",
+    "sig": "Buddhism later spread across Asia.",
+    "n": "Scholars disagree on his dates by about a century.",
+    "src": {
+      "t": "Gautama Buddha",
+      "u": "https://en.wikipedia.org/wiki/Gautama_Buddha"
+    }
+  },
+  {
+    "c": "India",
+    "y": "c. 322 BCE",
+    "s": -322,
+    "era": "Ancient",
+    "th": "Power",
+    "t": "Chandragupta founds the Maurya Empire",
+    "b": "Chandragupta Maurya took power in northern India, creating a large empire that Ashoka later ruled. Its capital was Pataliputra, near the modern city of Patna.",
+    "sig": "It was among the first empires to unite much of the subcontinent.",
+    "n": "Date approximate; sources are partly later traditions.",
+    "src": {
+      "t": "Maurya Empire",
+      "u": "https://en.wikipedia.org/wiki/Maurya_Empire"
+    }
+  },
+  {
+    "c": "India",
+    "y": "499 CE",
+    "s": 499,
+    "era": "Ancient",
+    "th": "Science",
+    "t": "Aryabhata’s Aryabhatiya",
+    "b": "Aryabhata’s text covers arithmetic, algebra, trigonometry and astronomy and gives pi as about 3.1416. He is thought to have worked in Kusumapura, often identified with Pataliputra.",
+    "sig": "It was a landmark of Indian mathematics and astronomy.",
+    "n": "The 499 CE date follows the traditional reading of the text.",
+    "src": { "t": "Aryabhata", "u": "https://en.wikipedia.org/wiki/Aryabhata" }
+  },
+  {
+    "c": "India",
+    "y": "c. 1010",
+    "s": 1010,
+    "era": "Medieval",
+    "th": "Culture",
+    "t": "Brihadisvara Temple, Thanjavur",
+    "b": "The Chola ruler Rajaraja I had this granite temple built; it was completed around 1010. The temple is dedicated to Shiva and has a tall pyramidal tower over its sanctum.",
+    "sig": "A major example of Chola architecture, now a UNESCO World Heritage Site.",
+    "n": "Completion date approximate.",
+    "src": {
+      "t": "Brihadisvara Temple, Thanjavur",
+      "u": "https://en.wikipedia.org/wiki/Brihadisvara_Temple,_Thanjavur"
+    }
+  },
+  {
+    "c": "India",
+    "y": "1206",
+    "s": 1206,
+    "era": "Medieval",
+    "th": "Power",
+    "t": "The Delhi Sultanate begins",
+    "b": "Qutb ud-Din Aibak established a sultanate at Delhi that ruled much of northern India for over three centuries. It was ruled by five successive dynasties until the Mughals took over in 1526.",
+    "sig": "It reshaped politics, architecture and culture in the region.",
+    "n": "",
+    "src": {
+      "t": "Delhi Sultanate",
+      "u": "https://en.wikipedia.org/wiki/Delhi_Sultanate"
+    }
+  },
+  {
+    "c": "India",
+    "y": "1336",
+    "s": 1336,
+    "era": "Medieval",
+    "th": "Power",
+    "t": "Vijayanagara Empire founded",
+    "b": "Harihara I and Bukka Raya I founded an empire whose capital, Vijayanagara, is now the ruins at Hampi. Its capital stood on the Tungabhadra River and drew many foreign visitors.",
+    "sig": "It was a major southern Indian power for centuries.",
+    "n": "Founding circumstances are debated.",
+    "src": {
+      "t": "Vijayanagara Empire",
+      "u": "https://en.wikipedia.org/wiki/Vijayanagara_Empire"
+    }
+  },
+  {
+    "c": "India",
+    "y": "21 April 1526",
+    "s": 1526,
+    "era": "Early Modern",
+    "th": "Power",
+    "t": "First Battle of Panipat",
+    "b": "Babur defeated Ibrahim Lodi, the Delhi sultan, using artillery and field tactics. Panipat lies north of Delhi and saw several decisive battles in Indian history.",
+    "sig": "It opened the way to the Mughal Empire.",
+    "n": "",
+    "src": {
+      "t": "First Battle of Panipat",
+      "u": "https://en.wikipedia.org/wiki/First_Battle_of_Panipat"
+    }
+  },
+  {
+    "c": "India",
+    "y": "1632",
+    "s": 1632,
+    "era": "Early Modern",
+    "th": "Culture",
+    "t": "Shah Jahan commissions the Taj Mahal",
+    "b": "Emperor Shah Jahan ordered the tomb at Agra for his wife Mumtaz Mahal, who died in 1631. The marble tomb at Agra has a central dome, four minarets and formal gardens.",
+    "sig": "It is among the best-known works of Mughal architecture.",
+    "n": "The main tomb was largely finished around 1643, the wider complex later.",
+    "src": { "t": "Taj Mahal", "u": "https://en.wikipedia.org/wiki/Taj_Mahal" }
+  },
+  {
+    "c": "India",
+    "y": "23 June 1757",
+    "s": 1757,
+    "era": "Modern",
+    "th": "Power",
+    "t": "Battle of Plassey",
+    "b": "The East India Company under Robert Clive defeated Nawab Siraj ud-Daulah of Bengal. The battle took place on the banks of the Bhagirathi River in Bengal.",
+    "sig": "It began the Company’s political control over Bengal.",
+    "n": "Role of betrayal and bribery is discussed by historians.",
+    "src": {
+      "t": "Battle of Plassey",
+      "u": "https://en.wikipedia.org/wiki/Battle_of_Plassey"
+    }
+  },
+  {
+    "c": "India",
+    "y": "10 May 1857",
+    "s": 1857,
+    "era": "Modern",
+    "th": "Power",
+    "t": "The Rebellion of 1857",
+    "b": "Soldiers of the Company’s army mutinied at Meerut and the revolt spread across northern and central India. Delhi, Kanpur and Lucknow were among its main centres of fighting.",
+    "sig": "Britain ended Company rule and the Crown took over in 1858.",
+    "n": "Names differ: mutiny, rebellion, first war of independence.",
+    "src": {
+      "t": "Indian Rebellion of 1857",
+      "u": "https://en.wikipedia.org/wiki/Indian_Rebellion_of_1857"
+    }
+  },
+  {
+    "c": "India",
+    "y": "12 March – 6 April 1930",
+    "s": 1930,
+    "era": "Modern",
+    "th": "Rights",
+    "t": "The Salt March",
+    "b": "Gandhi led a march from Sabarmati Ashram to Dandi to defy the British salt monopoly. The march covered about 390 kilometres and lasted 24 days.",
+    "sig": "It became a landmark of nonviolent civil disobedience.",
+    "n": "",
+    "src": {
+      "t": "Salt March",
+      "u": "https://en.wikipedia.org/wiki/Salt_March"
+    }
+  },
+  {
+    "c": "India",
+    "y": "26 November 1949",
+    "s": 1949,
+    "era": "Modern",
+    "th": "Rights",
+    "t": "The Constitution is adopted",
+    "b": "The Constituent Assembly adopted the Constitution on 26 November 1949; it came into force on 26 January 1950. B. R. Ambedkar chaired the drafting committee of the Constituent Assembly.",
+    "sig": "It established India as a sovereign democratic republic.",
+    "n": "",
+    "src": {
+      "t": "Constitution of India",
+      "u": "https://en.wikipedia.org/wiki/Constitution_of_India"
+    }
+  },
+  {
+    "c": "India",
+    "y": "1960s",
+    "s": 1966,
+    "era": "Modern",
+    "th": "Science",
+    "t": "The Green Revolution",
+    "b": "High-yielding wheat and rice varieties, irrigation and fertiliser raised grain output from the mid-1960s. Agricultural scientists such as M. S. Swaminathan helped drive the programme.",
+    "sig": "It reduced India’s dependence on food imports.",
+    "n": "Environmental and regional effects are debated.",
+    "src": {
+      "t": "Green Revolution in India",
+      "u": "https://en.wikipedia.org/wiki/Green_Revolution_in_India"
+    }
+  },
+  {
+    "c": "India",
+    "y": "July 1991",
+    "s": 1991,
+    "era": "Modern",
+    "th": "Power",
+    "t": "Economic liberalisation",
+    "b": "During a balance-of-payments crisis the government of P. V. Narasimha Rao, with Manmohan Singh as finance minister, opened the economy. India also devalued the rupee and loosened controls on foreign investment.",
+    "sig": "It reduced licensing and tariffs and changed India’s growth path.",
+    "n": "",
+    "src": {
+      "t": "Economic liberalisation in India",
+      "u": "https://en.wikipedia.org/wiki/Economic_liberalisation_in_India"
+    }
+  },
+  {
+    "c": "India",
+    "y": "23 August 2023",
+    "s": 2023,
+    "era": "Modern",
+    "th": "Exploration",
+    "t": "Chandrayaan-3 lands near the lunar south pole",
+    "b": "India’s Vikram lander touched down, making India the fourth country to soft-land on the Moon. The mission was launched by ISRO on 14 July 2023.",
+    "sig": "It was the first soft landing close to the lunar south polar region.",
+    "n": "",
+    "src": {
+      "t": "Chandrayaan-3",
+      "u": "https://en.wikipedia.org/wiki/Chandrayaan-3"
+    }
+  },
+  {
+    "c": "Greece",
+    "y": "c. 508 BCE",
+    "s": -508,
+    "era": "Ancient",
+    "th": "Power",
+    "t": "Cleisthenes’ reforms",
+    "b": "Cleisthenes reorganised Athenian citizenship into new tribes, a foundation of Athenian democracy. The reforms are dated to around 508 or 507 BCE, after the fall of the tyrant Hippias.",
+    "sig": "An early experiment in broad citizen participation, limited to free adult men.",
+    "n": "Date and details are debated.",
+    "src": {
+      "t": "Cleisthenes",
+      "u": "https://en.wikipedia.org/wiki/Cleisthenes"
+    }
+  },
+  {
+    "c": "Iran",
+    "y": "c. 539 BCE",
+    "s": -539,
+    "era": "Ancient",
+    "th": "Rights",
+    "t": "The Cyrus Cylinder",
+    "b": "Cyrus the Great’s Babylonian-language cylinder records his takeover of Babylon. The clay cylinder was found in Babylon in 1879 and is held in the British Museum.",
+    "sig": "Often cited in human-rights discourse, though historians question that reading.",
+    "n": "Modern interpretation is contested.",
+    "src": {
+      "t": "Cyrus Cylinder",
+      "u": "https://en.wikipedia.org/wiki/Cyrus_Cylinder"
+    }
+  },
+  {
+    "c": "Ethiopia",
+    "y": "1 March 1896",
+    "s": 1896,
+    "era": "Modern",
+    "th": "Power",
+    "t": "Battle of Adwa",
+    "b": "Ethiopian forces under Menelik II defeated an Italian army. The battle took place in northern Ethiopia, near the town of Adwa, and Italy accepted Ethiopian independence in the Treaty of Addis Ababa.",
+    "sig": "It secured Ethiopia’s independence against colonial conquest.",
+    "n": "",
+    "src": {
+      "t": "Battle of Adwa",
+      "u": "https://en.wikipedia.org/wiki/Battle_of_Adwa"
+    }
+  }
+]

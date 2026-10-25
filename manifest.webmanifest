@@ -1,0 +1,17 @@
+{
+  "name": "Chronicle",
+  "short_name": "Chronicle",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#14110f",
+  "theme_color": "#14110f",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

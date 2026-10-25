@@ -1,0 +1,122 @@
+[
+  {
+    "c": "Ghana",
+    "y": "6 March 1957",
+    "s": 1957,
+    "era": "Modern",
+    "th": "Power",
+    "t": "Ghana becomes independent",
+    "b": "The British colony of the Gold Coast became the independent state of Ghana under Prime Minister Kwame Nkrumah. It was the first colony in sub-Saharan Africa to gain independence from European rule.",
+    "sig": "It inspired independence movements across the continent.",
+    "n": "",
+    "src": {
+      "t": "History of Ghana",
+      "u": "https://en.wikipedia.org/wiki/History_of_Ghana"
+    }
+  },
+  {
+    "c": "Kenya",
+    "y": "12 December 1963",
+    "s": 1963,
+    "era": "Modern",
+    "th": "Power",
+    "t": "Kenya gains independence",
+    "b": "Kenya became independent from Britain after the Mau Mau uprising and a state of emergency that lasted from 1952 to 1960. Jomo Kenyatta led the new government and became president when Kenya turned republic in 1964.",
+    "sig": "It ended decades of colonial rule in East Africa’s largest settler colony.",
+    "n": "",
+    "src": {
+      "t": "History of Kenya",
+      "u": "https://en.wikipedia.org/wiki/History_of_Kenya"
+    }
+  },
+  {
+    "c": "Australia",
+    "y": "1 January 1901",
+    "s": 1901,
+    "era": "Modern",
+    "th": "Power",
+    "t": "Federation of Australia",
+    "b": "Six British colonies joined to form the Commonwealth of Australia, with a federal parliament and constitution. Indigenous Australians were largely excluded from the founding political settlement.",
+    "sig": "It created the modern Australian federal state.",
+    "n": "",
+    "src": {
+      "t": "Federation of Australia",
+      "u": "https://en.wikipedia.org/wiki/Federation_of_Australia"
+    }
+  },
+  {
+    "c": "Canada",
+    "y": "1 July 1867",
+    "s": 1867,
+    "era": "Modern",
+    "th": "Power",
+    "t": "Canadian Confederation",
+    "b": "The British North America Act united the Province of Canada, split into Ontario and Quebec, with Nova Scotia and New Brunswick as a federal dominion. More provinces and territories joined over the following decades.",
+    "sig": "It is commemorated each year as Canada Day.",
+    "n": "",
+    "src": {
+      "t": "Canadian Confederation",
+      "u": "https://en.wikipedia.org/wiki/Canadian_Confederation"
+    }
+  },
+  {
+    "c": "Argentina",
+    "y": "9 July 1816",
+    "s": 1816,
+    "era": "Modern",
+    "th": "Power",
+    "t": "The Declaration of Independence at Tucumán",
+    "b": "Delegates at the Congress of Tucumán declared the independence of the United Provinces of the Río de la Plata from Spain. Years of war and civil conflict followed before a stable Argentine state emerged.",
+    "sig": "9 July is Argentina’s Independence Day.",
+    "n": "",
+    "src": {
+      "t": "Argentine Declaration of Independence",
+      "u": "https://en.wikipedia.org/wiki/Argentine_Declaration_of_Independence"
+    }
+  },
+  {
+    "c": "Italy",
+    "y": "17 March 1861",
+    "s": 1861,
+    "era": "Modern",
+    "th": "Power",
+    "t": "The Kingdom of Italy is proclaimed",
+    "b": "After the campaigns of Garibaldi and the diplomacy of Cavour, Victor Emmanuel II was proclaimed king of a united Italy. Venetia joined in 1866 and Rome in 1871 to complete the unification.",
+    "sig": "It ended centuries of political fragmentation on the peninsula.",
+    "n": "",
+    "src": {
+      "t": "Unification of Italy",
+      "u": "https://en.wikipedia.org/wiki/Unification_of_Italy"
+    }
+  },
+  {
+    "c": "France",
+    "y": "14 July 1789",
+    "s": 1789,
+    "era": "Early Modern",
+    "th": "Rights",
+    "t": "The storming of the Bastille",
+    "b": "A Parisian crowd attacked the Bastille fortress-prison, seeking weapons and gunpowder amid political crisis. The event became a symbol of the French Revolution.",
+    "sig": "14 July is France’s national day.",
+    "n": "",
+    "src": {
+      "t": "Storming of the Bastille",
+      "u": "https://en.wikipedia.org/wiki/Storming_of_the_Bastille"
+    }
+  },
+  {
+    "c": "Spain",
+    "y": "2 January 1492",
+    "s": 1492,
+    "era": "Early Modern",
+    "th": "Power",
+    "t": "The fall of Granada",
+    "b": "The Nasrid emirate of Granada surrendered to the Catholic Monarchs, Isabella of Castile and Ferdinand of Aragon. It ended Muslim rule on the Iberian Peninsula after nearly eight centuries.",
+    "sig": "The same year Spain sponsored Columbus’s first voyage.",
+    "n": "",
+    "src": {
+      "t": "Granada War",
+      "u": "https://en.wikipedia.org/wiki/Granada_War"
+    }
+  }
+]
